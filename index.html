@@ -383,10 +383,10 @@
             tempId = id;
             tempPass = pass;
             
-            // SAVE TO FIREBASE
+            // SAVE TO FIREBASE - START WITH 0 BALANCE
             set(ref(db, 'users/' + id), {
                 password: pass,
-                balance: 50000,
+                balance: 0, // <--- CHANGED TO 0
                 registeredAt: new Date().toISOString()
             }).then(() => {
                 document.getElementById('newUserId').innerText = tempId;
